@@ -1,26 +1,32 @@
-[ User ]
-    |
-    v
-[ Frontend ]
- HTML/CSS/JavaScript
-    |
-    | HTTP POST /refactor
-    v
-[ FastAPI Backend ]
-    |
-    | API Request
-    v
-[ NVIDIA NIM ]
-    |
-    v
-[ AI Model ]
-    |
-    | JSON Response
-    v
-[ FastAPI Backend ]
-    |
-    v
-[ Frontend ]
-    |
-    v
-[ Suggestions ]
+
+                 [ User ]
+                    |
+                    v
+          [ Frontend ]
+        HTML / CSS / JS
+                    |
+                    | HTTP POST /refactor
+                    | { "code": "..." }
+                    v
+          [ FastAPI Backend ]
+                    |
+                    | API Request
+                    v
+             [ NVIDIA NIM ]
+                    |
+                    | Nemotron Model
+                    v
+             [ AI Analysis ]
+                    |
+                    | JSON Response
+                    v
+          [ FastAPI Backend ]
+                    |
+                    | Validated JSON
+                    v
+             [ Frontend ]
+                    |
+                    v
+             [ Suggestions ]
+
+The user submits source code through the frontend. The frontend sends the code to the FastAPI backend through the `/refactor` endpoint. The backend forwards the request to NVIDIA NIM, which uses the Nemotron model to analyze the code. The returned JSON is validated by the backend and then sent back to the frontend, where the refactoring suggestions are displayed to the user.
