@@ -1,0 +1,3 @@
+*Location:* skills/suggestion-format/SKILL.md
+*What it does:* Defines consistent rules for writing refactoring suggestions.
+It ensures that suggestions are specific, actionable, written in plain English, and organized into the four required categories.
