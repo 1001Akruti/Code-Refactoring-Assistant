@@ -1,0 +1,9 @@
+User pastes code into the frontend.
+User clicks the Analyze button.
+Frontend sends the code to the backend using an HTTP POST request.
+Backend receives the code at the /refactor endpoint.
+Backend sends the code to the NVIDIA NIM AI model.
+AI analyzes the code and generates improvement suggestions.
+Backend receives the AI response.
+Backend sends the response to the frontend.
+Frontend displays the suggestions to the user.
