@@ -1,3 +1,4 @@
+## Custom agent: Refactoring Assistant Agent
 *Location:* backend/main.py
 
 *Role:* Analyzes a pasted code snippet and returns structured refactoring suggestions across four categories.
