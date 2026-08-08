@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 loadingState.querySelector('.loading-text').textContent = 'Almost done...';
                 await new Promise(resolve => setTimeout(resolve, 800));
 
-                const response = await fetch('https://code-refactoring-assistant.vercel.app/', {
+                const response = await fetch('https://code-refactoring-assistant.vercel.app/refactor', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
