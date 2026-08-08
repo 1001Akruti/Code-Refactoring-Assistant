@@ -1,0 +1,26 @@
+[ User ]
+    |
+    v
+[ Frontend ]
+ HTML/CSS/JavaScript
+    |
+    | HTTP POST /refactor
+    v
+[ FastAPI Backend ]
+    |
+    | API Request
+    v
+[ NVIDIA NIM ]
+    |
+    v
+[ AI Model ]
+    |
+    | JSON Response
+    v
+[ FastAPI Backend ]
+    |
+    v
+[ Frontend ]
+    |
+    v
+[ Suggestions ]
