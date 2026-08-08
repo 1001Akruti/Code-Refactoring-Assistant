@@ -1,0 +1,4 @@
+- Backend: Python, FastAPI, follow PEP8
+- Frontend: HTML, CSS, JavaScript
+- Keep functions small and single-purpose
+- Store API keys in .env only
