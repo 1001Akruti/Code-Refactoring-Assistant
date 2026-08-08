@@ -1,0 +1,15 @@
+*Location:* backend/main.py
+
+*Role:* Analyzes a pasted code snippet and returns structured refactoring suggestions across four categories.
+
+*Model:* Mistral Devstral 2 123B Instruct via NVIDIA NIM.
+
+*Input:* Raw source code as a string.
+
+*Output:* Structured JSON containing:
+- cleaner_code
+- design_patterns
+- optimization
+- naming_improvements
+
+The agent does not return a complete rewritten source file. It provides actionable suggestions for improving the submitted code.
