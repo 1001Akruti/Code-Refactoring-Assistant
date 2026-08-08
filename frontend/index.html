@@ -3,34 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Refactoring Assistant</title>
+    <title>AI Code Refactoring Assistant</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Floating Background Elements -->
+    <div class="floating-background">
+        <div class="floating-symbol">{} </div>
+        <div class="floating-symbol"><></div>
+        <div class="floating-symbol">()</div>
+        <div class="floating-symbol">[]</div>
+        <div class="floating-symbol">class</div>
+        <div class="floating-symbol">return</div>
+        <div class="floating-symbol">const</div>
+        <div class="floating-symbol">function</div>
+        <div class="floating-symbol">if</div>
+        <div class="floating-symbol">=> </div>
+        <div class="floating-symbol">import</div>
+        <div class="floating-symbol">export</div>
+        <div class="floating-symbol">async</div>
+        <div class="floating-symbol">await</div>
+        <div class="floating-symbol">extends</div>
+        <div class="floating-symbol">static</div>
+    </div>
+
     <div class="container">
-        <h1>Code Refactoring Assistant</h1>
-        <textarea id="codeInput" placeholder="Paste your code here..."></textarea>
-        <button id="analyzeBtn">Analyze</button>
-        
-        <div class="results">
-            <div class="result-box">
-                <h2>Cleaner code</h2>
-                <div id="cleanerCode" class="content">Analyzing...</div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>AI Code Refactoring Assistant</h1>
+                <p class="subtitle">
+                    Transform messy code into clean, maintainable and optimized code using AI.
+                </p>
+                
+                <div class="info-card">
+                    <div class="info-item">
+                        <div class="info-icon">📝</div>
+                        <div>
+                            <h3>Paste your code</h3>
+                            <p>Add JavaScript, Python, or any supported language</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🔍</div>
+                        <div>
+                            <h3>Choose analysis</h3>
+                            <p>Select cleaner code, patterns, optimization, or naming</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">⚡</div>
+                        <div>
+                            <h3>Click Analyze</h3>
+                            <p>Get AI-powered improvements instantly</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📊</div>
+                        <div>
+                            <h3>View results</h3>
+                            <p>See improvements with explanations</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="result-box">
-                <h2>Design patterns</h2>
-                <div id="designPatterns" class="content">Analyzing...</div>
+        </section>
+
+        <!-- Editor Section -->
+        <div class="editor-section">
+            <div id="editorContainer" tabindex="0" aria-label="Code input"></div>
+            
+            <!-- Empty State -->
+            <div class="empty-state">
+                <div class="empty-icon">🤖</div>
+                <h2>Ready to refactor your code</h2>
+                <p>Paste your code into the editor above and click Analyze to get AI-powered improvements</p>
             </div>
-            <div class="result-box">
-                <h2>Optimization</h2>
-                <div id="optimization" class="content">Analyzing...</div>
+            
+            <!-- Loading State -->
+            <div class="loading-state">
+                <div class="loading-spinner"></div>
+                <div class="loading-text">Preparing analysis...</div>
             </div>
-            <div class="result-box">
-                <h2>Naming improvements</h2>
-                <div id="namingImprovements" class="content">Analyzing...</div>
+        </div>
+
+        <!-- Analyze Button -->
+        <button id="analyzeBtn" class="analyze-btn">
+            <span class="button-text">Analyze Code</span>
+            <span class="button-loading">
+                <span class="loading-spinner-small"></span>
+                Analyzing...
+            </span>
+        </button>
+
+        <!-- Results Section -->
+        <div class="results-accordion">
+            <!-- Cleaner Code -->
+            <div class="accordion-item active">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-icon">🧹</div>
+                    <h3>Cleaner Code</h3>
+                    <div class="accordion-toggle">▼</div>
+                </div>
+                <div class="accordion-content">
+                    <div id="cleanerCode" class="content">Analyzing...</div>
+                </div>
+            </div>
+            
+            <!-- Design Patterns -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-icon">🏗</div>
+                    <h3>Design Patterns</h3>
+                    <div class="accordion-toggle">▼</div>
+                </div>
+                <div class="accordion-content">
+                    <div id="designPatterns" class="content">Analyzing...</div>
+                </div>
+            </div>
+            
+            <!-- Optimization -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-icon">⚡</div>
+                    <h3>Optimization</h3>
+                    <div class="accordion-toggle">▼</div>
+                </div>
+                <div class="accordion-content">
+                    <div id="optimization" class="content">Analyzing...</div>
+                </div>
+            </div>
+            
+            <!-- Naming Improvements -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-icon">🏷</div>
+                    <h3>Naming Improvements</h3>
+                    <div class="accordion-toggle">▼</div>
+                </div>
+                <div class="accordion-content">
+                    <div id="namingImprovements" class="content">Analyzing...</div>
+                </div>
             </div>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
