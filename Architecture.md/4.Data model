@@ -1,1 +1,19 @@
 
+Request:
+
+The frontend sends the user's source code to the backend as JSON:
+
+```json
+{
+  "code": "<source code>"
+}
+
+
+Response:
+
+{
+  "cleaner_code": "...",
+  "design_patterns": "...",
+  "optimization": "...",
+  "naming_improvements": "..."
+}
