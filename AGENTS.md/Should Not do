@@ -1,3 +1,3 @@
-- Don't modify files outside the assigned folder
-- Don't add new libraries without approval
-- Don't commit .env or secret files
+- Don't modify files outside the assigned folder unless asked.
+- Don't add new libraries without approval of team.
+- Don't commit .env or secret files and files containing passwords.
