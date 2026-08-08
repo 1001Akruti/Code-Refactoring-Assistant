@@ -1,0 +1,36 @@
+ Problem
+
+Developers want quick, structured feedback
+on code without a full manual review cycle.
+
+User Stories
+
+- As a developer, I want to paste a code snippet
+  and get suggestions, so that I can improve it
+  before opening a PR.
+
+- As a developer, I want suggestions split into
+  clear categories, so that I can focus on what
+  matters most.
+
+ Categories
+
+- cleaner_code
+- design_patterns
+- optimization
+- naming_improvements
+
+ Acceptance Criteria
+
+- User can paste code.
+- User can click Analyze.
+- Analysis returns suggestions.
+- Suggestions are grouped into all four categories.
+- Response should be returned within 10 seconds.
+
+ Out of Scope
+
+- User accounts
+- Authentication
+- Saving history
+- Multi-file analysis
