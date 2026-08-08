@@ -1,36 +1,164 @@
- Problem
+# Product Specification / PRD
 
-Developers want quick, structured feedback
-on code without a full manual review cycle.
+## 1. Product Overview
 
-User Stories
+Code Refactoring Assistant is an AI-powered developer productivity tool that analyzes
+source code and provides structured suggestions to improve code quality,
+readability, maintainability, and efficiency.
 
-- As a developer, I want to paste a code snippet
-  and get suggestions, so that I can improve it
-  before opening a PR.
+The application currently provides suggestions in four areas:
 
-- As a developer, I want suggestions split into
-  clear categories, so that I can focus on what
-  matters most.
+- Cleaner Code
+- Design Patterns
+- Optimization
+- Naming Improvements
 
- Categories
+---
 
-- cleaner_code
-- design_patterns
-- optimization
-- naming_improvements
+## 2. Problem Statement
 
- Acceptance Criteria
+Developers often spend time manually identifying code quality issues,
+improving naming, finding optimization opportunities, and determining
+appropriate design patterns.
 
-- User can paste code.
-- User can click Analyze.
-- Analysis returns suggestions.
-- Suggestions are grouped into all four categories.
-- Response should be returned within 10 seconds.
+The Code Refactoring Assistant aims to reduce this effort by providing
+AI-powered refactoring suggestions through a simple interface.
 
- Out of Scope
+---
 
-- User accounts
-- Authentication
-- Saving history
+## 3. Target User
+
+The primary users are:
+
+- Software developers
+- Students learning programming
+- Developers looking for quick code-quality feedback
+
+---
+
+## 4. User Stories
+
+### US-01: Submit Source Code
+
+As a developer, I want to paste my source code into the application
+so that I can receive refactoring suggestions.
+
+### US-02: Analyze Code
+
+As a developer, I want the application to analyze my submitted code
+so that I can identify areas for improvement.
+
+### US-03: Improve Code Quality
+
+As a developer, I want suggestions for cleaner code
+so that my code becomes easier to read and maintain.
+
+### US-04: Identify Design Patterns
+
+As a developer, I want recommendations for suitable design patterns
+so that I can improve the structure of my code.
+
+### US-05: Optimize Code
+
+As a developer, I want optimization suggestions
+so that I can identify opportunities to improve efficiency.
+
+### US-06: Improve Naming
+
+As a developer, I want naming suggestions
+so that variables and identifiers are clearer and more meaningful.
+
+### US-07: Handle Errors
+
+As a developer, I want to receive an error message when the
+refactoring service is unavailable so that I know the analysis failed.
+
+---
+
+# 5. Acceptance Criteria
+
+## US-01: Submit Source Code
+
+- [ ] User can enter source code into the code input area.
+- [ ] User can click the Analyze button.
+- [ ] Empty code submission is rejected.
+- [ ] Submitted code is sent to the backend.
+
+## US-02: Analyze Code
+
+- [ ] Backend accepts the submitted source code.
+- [ ] Backend sends the code to the AI service.
+- [ ] AI response is returned in structured JSON format.
+- [ ] Invalid AI responses are handled appropriately.
+
+## US-03: Improve Code Quality
+
+- [ ] Application displays cleaner-code suggestions.
+- [ ] Suggestions are displayed after successful analysis.
+
+## US-04: Identify Design Patterns
+
+- [ ] Application displays design-pattern suggestions.
+- [ ] Suggestions are displayed after successful analysis.
+
+## US-05: Optimize Code
+
+- [ ] Application displays optimization suggestions.
+- [ ] Suggestions are displayed after successful analysis.
+
+## US-06: Improve Naming
+
+- [ ] Application displays naming-improvement suggestions.
+- [ ] Suggestions are displayed after successful analysis.
+
+## US-07: Handle Errors
+
+- [ ] Application displays an error when the backend cannot be reached.
+- [ ] Backend returns an appropriate error response when AI processing fails.
+
+---
+
+# 6. Functional Requirements
+
+### FR-01: Code Input
+
+The system shall allow users to enter source code for analysis.
+
+### FR-02: Code Analysis
+
+The system shall send submitted code to the backend for AI-powered analysis.
+
+### FR-03: Refactoring Suggestions
+
+The system shall provide suggestions covering:
+
+- Cleaner code
+- Design patterns
+- Optimization
+- Naming improvements
+
+### FR-04: Structured Response
+
+The backend shall return the analysis in a structured JSON response.
+
+### FR-05: Error Handling
+
+The system shall provide feedback when analysis cannot be completed.
+
+---
+
+# 7. Out of Scope
+
+The current version does not include:
+
+- Automatic modification of the user's local files
+- Automatic Git commits
+- Automatic pull requests
+- Automatic deployment
+- Persistent storage of submitted source code
+- Complete automated testing of arbitrary user programs Problem
+
+
+
+
 - Multi-file analysis
