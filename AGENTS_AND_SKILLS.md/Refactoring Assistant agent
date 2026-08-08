@@ -15,3 +15,6 @@
 
 The agent does not return a complete rewritten source file.
 It provides actionable suggestions for improving the submitted code.
+
+this file is Python (FastAPI), and Python projects don't use package.json — that's a Node.js/npm thing.
+The Python equivalent is requirements.txt,which is embedded in backend folder
