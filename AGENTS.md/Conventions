@@ -1,4 +1,8 @@
-- Backend: Python, FastAPI, follow PEP8
-- Frontend: HTML, CSS, JavaScript
-- Keep functions small and single-purpose
+- Backend: 
+ Use  of Python, 
+ Use of FastAPI, 
+ Follow PEP8 coding style
+- Frontend: 
+  Use  HTML, CSS, JavaScript
+- Keep functions small and simple and designed to one job only.
 - Store API keys in .env only
